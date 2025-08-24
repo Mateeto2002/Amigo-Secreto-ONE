@@ -6,25 +6,25 @@ let aleatorio = Math.floor(Math.random()*amigos.length);
 let resultado = document.getElementById('resultado');
 let lista = document.getElementById("listaAmigos");
 let cajaTexto = document.getElementById("amigo");
-let nombre = cajaTexto.value;
+
 
 function agregarAmigo(){
 
-   
+    let nombre = cajaTexto.value;
 
     if (nombre == "" ) {
         alert("Por favor escriba un nombre")
-
     }else{
-
         amigos.push(nombre);
-        console.log(amigos)
     }
+
     cajaTexto.value = "";
-    
     agregarLista();
+
+    resultado.innerHTML = ""
    
 }
+
 
 function agregarLista() {
     
@@ -45,5 +45,7 @@ function sortearAmigo() {
 
     lista.innerHTML = "";
     resultado.innerHTML = "El nombre ganado es "+ amigos[aleatorio];
+
+    amigos = [];
     
 }
